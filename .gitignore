@@ -1,0 +1,14 @@
+/*.js
+/*.js.map
+/extensions/**/*.js
+/extensions/**/*.js.map
+
+
+# Visual Studio
+/bin
+/obj
+/*.suo
+/*.csproj.user
+/*.suo
+/web.Debug.config
+/web.Release.config
