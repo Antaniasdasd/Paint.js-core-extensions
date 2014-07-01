@@ -46,14 +46,14 @@ class ColorChooser
      * Primary color changed, update on paint object
      */
     private setPrimaryColor(ev : JQueryInputEventObject) {
-        this.paint.primaryColor = new Paint.Color(this.paint.$(this.inputPrimaryColor).val());
+        this.paint.primaryColor = new window.Paint.Color(this.paint.$(this.inputPrimaryColor).val());
     }
     
     /**
      * Secondary color changed, update on paint object
      */
     private setSecondaryColor(ev : JQueryInputEventObject) {
-        this.paint.secondaryColor = new Paint.Color(this.paint.$(this.inputSecondaryColor).val());        
+        this.paint.secondaryColor = new window.Paint.Color(this.paint.$(this.inputSecondaryColor).val());        
     }
 }
 

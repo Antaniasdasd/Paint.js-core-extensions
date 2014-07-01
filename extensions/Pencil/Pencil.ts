@@ -28,7 +28,7 @@ class Pencil {
     onDraw(paper: Paint.Paper, point: Paint.Point) {
         var matrix = paper.baseLayer.getCanvasMatrix();
 
-        Paint.PaperLayer.drawAliasedLine(
+        window.Paint.PaperLayer.drawAliasedLine(
             this._lastPt.X,
             this._lastPt.Y,
             point.X,
