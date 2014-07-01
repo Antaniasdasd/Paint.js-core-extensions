@@ -69,7 +69,7 @@ class ShapeDrawer {
     private _shapes: Shapes;
     private _currentShape: typeof Shape;
 
-    private ToolBarGroup: string;
+    private toolbarGroup: Paint.BarGroup;
 
     public constructor(paint: Paint.Global) {
         this.paint = paint;
@@ -78,22 +78,24 @@ class ShapeDrawer {
 
     init() {
         this.paint.registerTool(this);
-        this.ToolBarGroup = this.paint.barManager.addGroup('tabTools', 'Shapes');
-
+        this.toolbarGroup = this.paint.barManager.addGroup('tabTools', 'Shapes');
         // Add Rectangle shape
+        if (!this.toolbarGroup)
+            return;
+
         this._shapes.addShape(
-            this.paint.barManager.addToolbarItem(__dirname + "/icons/rectangle.png", this.ToolBarGroup, Rectangle.name, this),
+            this.toolbarGroup.addTool(__dirname + "/icons/rectangle.png", Rectangle.name, this),
             Rectangle
             );
 
         // Add Line shape
         this._shapes.addShape(
-            this.paint.barManager.addToolbarItem(__dirname + "/icons/line.png", this.ToolBarGroup, Line.name, this),
+            this.toolbarGroup.addTool(__dirname + "/icons/line.png", Line.name, this),
             Line
             );
 
         this._shapes.addShape(
-            this.paint.barManager.addToolbarItem(__dirname + "/icons/ellipse.png", this.ToolBarGroup, Ellipse.name, this),
+            this.toolbarGroup.addTool(__dirname + "/icons/ellipse.png", Ellipse.name, this),
             Ellipse
             );
     }

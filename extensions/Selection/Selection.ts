@@ -5,13 +5,16 @@ class Selection {
     private point1: Paint.Point = null;
     private _layer: Paint.PaperLayer;
 
+    private toolbarGroup: Paint.Group;
+
     public constructor(paint: Paint.Global) {
         this.paint = paint;
     }
 
     init() {
         this.paint.registerTool(this);
-        this.paint.barManager.addToolbarToolItem(__dirname + "/icon.png", "Select", this);
+        this.toolbarGroup = this.paint.barManager.addGroup('tabTools', 'Image');
+        this.toolbarGroup.addTool(__dirname + "/icon.png", "Select", this);
     }
 
     onStartDrawing(paper: Paint.Paper, point: Paint.Point) {

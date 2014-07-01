@@ -5,7 +5,9 @@ class ColorChooser
     
     private inputPrimaryColor : HTMLInputElement;
     private inputSecondaryColor : HTMLInputElement;
-    
+
+    private toolbarGroup: Paint.Group;
+
     public constructor(paint: Paint.Global) {
         this.paint = paint;
     }
@@ -13,12 +15,13 @@ class ColorChooser
     init() {
         var paint = this.paint;
         var $ = this.paint.$;
-    
+
         // add input color
-        $("#miscToolbar").append('<div>\
+        this.toolbarGroup = this.paint.barManager.addGroup('tabTools', 'Color');
+        this.toolbarGroup.addCustom('<div>\
                 Primary color: <input type="color" id="toolColor1" value="#000000" />\
                 Secondary color: <input type="color" id="toolColor2" value="#ffffff" />\
-           </div>');
+            </div>');
         
         this.inputPrimaryColor = <HTMLInputElement> $("#toolColor1")[0];
         this.inputSecondaryColor = <HTMLInputElement> $("#toolColor2")[0];
