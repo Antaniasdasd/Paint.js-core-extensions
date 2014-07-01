@@ -1,18 +1,18 @@
-var Brush = (function () {
+﻿var Brush = (function () {
     function Brush(paint) {
         this.EXTENSION_NAME = "com.paintjs.Brush";
         this._lastPt = null;
         this.paint = paint;
 
         this.brush = paint.document.createElement('img');
-        this.brush.src = "extensions/Brush/brush21.png";
+        this.brush.src = __dirname + "/brush21.png";
         this.brush.width = 1;
         this.brush.height = 1;
     }
     Brush.prototype.init = function () {
         this.paint.registerExtension(this);
         this.paint.registerTool(this);
-        this.paint.barManager.addToolbarToolItem("extensions/Brush/icon.png", "Brush", this);
+        this.paint.barManager.addToolbarToolItem(__dirname + "/icon.png", "Brush", this);
     };
 
     Brush.prototype.onStartDrawing = function (paper, point) {

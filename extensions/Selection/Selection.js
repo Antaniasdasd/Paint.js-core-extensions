@@ -1,15 +1,15 @@
-var Selection = (function () {
-    function Selectiona(paint) {
+﻿var Selection = (function () {
+    function Selection(paint) {
         this.EXTENSION_NAME = "com.paintjs.Selection";
         this.point1 = null;
         this.paint = paint;
     }
-    Selectiona.prototype.init = function () {
+    Selection.prototype.init = function () {
         this.paint.registerTool(this);
-        this.paint.barManager.addToolbarToolItem("extensions/Selection/icon.png", "Select", this);
+        this.paint.barManager.addToolbarToolItem(__dirname + "/icon.png", "Select", this);
     };
 
-    Selectiona.prototype.onStartDrawing = function (paper, point) {
+    Selection.prototype.onStartDrawing = function (paper, point) {
         this.point1 = point;
 
         this._layer = paper.addLayer(null);
@@ -19,7 +19,7 @@ var Selection = (function () {
         context.strokeStyle = "#3399FF";
     };
 
-    Selectiona.prototype.onDraw = function (paper, point) {
+    Selection.prototype.onDraw = function (paper, point) {
         var canvas = this._layer.canvas;
         var context = this._layer.getContext();
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -30,10 +30,10 @@ var Selection = (function () {
         context.closePath();
     };
 
-    Selectiona.prototype.onStopDrawing = function (paper, point) {
+    Selection.prototype.onStopDrawing = function (paper, point) {
         paper.removeLayer(this._layer);
     };
-    return Selectiona;
+    return Selection;
 })();
 
 exports.Extensions = [Selection];

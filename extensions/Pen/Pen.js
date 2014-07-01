@@ -1,4 +1,4 @@
-var Pen = (function () {
+﻿var Pen = (function () {
     function Pen(paint) {
         this.EXTENSION_NAME = "com.paintjs.Pen";
         this._points = [];

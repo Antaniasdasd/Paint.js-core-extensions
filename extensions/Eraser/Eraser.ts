@@ -11,7 +11,7 @@ class Eraser {
 
     init() {
         this.paint.registerTool(this);
-        this.paint.barManager.addToolbarToolItem("extensions/Eraser/icon.png", "Eraser", this);
+        this.paint.barManager.addToolbarToolItem(__dirname + "/icon.png", "Eraser", this);
     }
 
     activated(id: string) {
@@ -44,15 +44,15 @@ class Eraser {
         var el = <HTMLCanvasElement>newCanvas[0];
         var ctx = el.getContext('2d');
 
-        ctx.fillStyle = Paint.Color.White.HexString;
+        ctx.fillStyle = window.Paint.Color.White.HexString;
         ctx.fillRect(0, 0, size, size);
 
-        var mat = new Paint.CanvasMatrix(ctx.getImageData(0, 0, size, size));
+        var mat = new window.Paint.CanvasMatrix(ctx.getImageData(0, 0, size, size));
 
-        Paint.PaperLayer.drawAliasedLine(0, 0, size - 1, 0, 1, Paint.Color.Black, mat.colorMatrix);
-        Paint.PaperLayer.drawAliasedLine(0, 0, 0, size - 1, 1, Paint.Color.Black, mat.colorMatrix);
-        Paint.PaperLayer.drawAliasedLine(size - 1, 0, size - 1, size - 1, 1, Paint.Color.Black, mat.colorMatrix);
-        Paint.PaperLayer.drawAliasedLine(0, size - 1, size - 1, size - 1, 1, Paint.Color.Black, mat.colorMatrix);
+        window.Paint.PaperLayer.drawAliasedLine(0, 0, size - 1, 0, 1, window.Paint.Color.Black, mat.colorMatrix);
+        window.Paint.PaperLayer.drawAliasedLine(0, 0, 0, size - 1, 1, window.Paint.Color.Black, mat.colorMatrix);
+        window.Paint.PaperLayer.drawAliasedLine(size - 1, 0, size - 1, size - 1, 1, window.Paint.Color.Black, mat.colorMatrix);
+        window.Paint.PaperLayer.drawAliasedLine(0, size - 1, size - 1, size - 1, 1, window.Paint.Color.Black, mat.colorMatrix);
 
         mat.apply(ctx);
 

@@ -8,7 +8,7 @@ class Pencil {
     }
 
     init() {
-        this.paint.barManager.addToolbarToolItem("extensions/Pencil/icon.png", "Pencil", this);
+        this.paint.barManager.addToolbarToolItem(__dirname + "/icon.png", "Pencil", this);
         this.paint.registerTool(this);
     }
 

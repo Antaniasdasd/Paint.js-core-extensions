@@ -1,4 +1,4 @@
-class Selectiona {
+class Selection {
     public EXTENSION_NAME: string = "com.paintjs.Selection";
     paint: Paint.Global;
 
@@ -11,7 +11,7 @@ class Selectiona {
 
     init() {
         this.paint.registerTool(this);
-        this.paint.barManager.addToolbarToolItem("extensions/Selection/icon.png", "Select", this);
+        this.paint.barManager.addToolbarToolItem(__dirname + "/icon.png", "Select", this);
     }
 
     onStartDrawing(paper: Paint.Paper, point: Paint.Point) {

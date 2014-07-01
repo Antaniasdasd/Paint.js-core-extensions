@@ -1,4 +1,4 @@
-var __extends = this.__extends || function (d, b) {
+﻿var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -89,11 +89,11 @@ var ShapeDrawer = (function () {
         this.paint.registerTool(this);
         this.ToolBarGroup = this.paint.barManager.addGroup('tabTools', 'Shapes');
 
-        this._shapes.addShape(this.paint.barManager.addToolbarItem("extensions/ShapeDrawer/icons/rectangle.png", this.ToolBarGroup, Rectangle.name, this), Rectangle);
+        this._shapes.addShape(this.paint.barManager.addToolbarItem(__dirname + "/icons/rectangle.png", this.ToolBarGroup, Rectangle.name, this), Rectangle);
 
-        this._shapes.addShape(this.paint.barManager.addToolbarItem("extensions/ShapeDrawer/icons/line.png", this.ToolBarGroup, Line.name, this), Line);
+        this._shapes.addShape(this.paint.barManager.addToolbarItem(__dirname + "/icons/line.png", this.ToolBarGroup, Line.name, this), Line);
 
-        this._shapes.addShape(this.paint.barManager.addToolbarItem("extensions/ShapeDrawer/icons/ellipse.png", this.ToolBarGroup, Ellipse.name, this), Ellipse);
+        this._shapes.addShape(this.paint.barManager.addToolbarItem(__dirname + "/icons/ellipse.png", this.ToolBarGroup, Ellipse.name, this), Ellipse);
     };
 
     ShapeDrawer.prototype.activated = function (id) {

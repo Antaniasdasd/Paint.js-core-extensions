@@ -17,18 +17,86 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="extensions\Brush\Brush.js" />
+    <Content Include="extensions\Brush\brush21.png" />
+    <Content Include="extensions\Brush\icon.png" />
+    <Content Include="extensions\ColorChooser\ColorChooser.js" />
+    <Content Include="extensions\ColorPicker\ColorPicker.js" />
+    <Content Include="extensions\ColorPicker\icon.png" />
+    <Content Include="extensions\Eraser\Eraser.js" />
+    <Content Include="extensions\Eraser\icon.png" />
+    <Content Include="extensions\ImageSaver\ImageSaver.js" />
+    <Content Include="extensions\PaperCoordinates\CursorPosition.png" />
+    <Content Include="extensions\PaperCoordinates\PaperCoordinates.js" />
+    <Content Include="extensions\PaperCoordinates\PaperSize.png" />
+    <Content Include="extensions\Pencil\icon.png" />
+    <Content Include="extensions\Pencil\Pencil.js" />
+    <Content Include="extensions\Pen\Pen.js" />
+    <Content Include="extensions\Selection\icon.png" />
+    <Content Include="extensions\Selection\Selection.js" />
+    <Content Include="extensions\ShapeDrawer\icons\ellipse.png" />
+    <Content Include="extensions\ShapeDrawer\icons\line.png" />
+    <Content Include="extensions\ShapeDrawer\icons\rectangle.png" />
+    <Content Include="extensions\ShapeDrawer\ShapeDrawer.js" />
+    <Content Include="extensions\SizeChooser\SizeChooser.js" />
+    <Content Include="extensions\Zoom\Zoom.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE" />
     <Content Include="README.md" />
     <Content Include="package.json" />
+    <Content Include="extensions\Brush\Brush.js.map" />
+    <Content Include="extensions\Brush\package.json" />
+    <Content Include="extensions\ColorChooser\ColorChooser.js.map" />
+    <Content Include="extensions\ColorChooser\package.json" />
+    <Content Include="extensions\ColorPicker\ColorPicker.js.map" />
+    <Content Include="extensions\ColorPicker\package.json" />
+    <Content Include="extensions\Eraser\Eraser.js.map" />
+    <Content Include="extensions\Eraser\package.json" />
+    <Content Include="extensions\ImageSaver\ImageSaver.js.map" />
+    <Content Include="extensions\ImageSaver\package.json" />
+    <Content Include="extensions\PaperCoordinates\package.json" />
+    <Content Include="extensions\PaperCoordinates\PaperCoordinates.js.map" />
+    <Content Include="extensions\Pencil\package.json" />
+    <Content Include="extensions\Pencil\Pencil.js.map" />
+    <Content Include="extensions\Pen\package.json" />
+    <Content Include="extensions\Pen\Pen.js.map" />
+    <Content Include="extensions\Selection\package.json" />
+    <Content Include="extensions\Selection\Selection.js.map" />
+    <Content Include="extensions\ShapeDrawer\package.json" />
+    <Content Include="extensions\ShapeDrawer\ShapeDrawer.js.map" />
+    <Content Include="extensions\SizeChooser\package.json" />
+    <Content Include="extensions\SizeChooser\SizeChooser.js.map" />
+    <Content Include="extensions\Zoom\package.json" />
+    <Content Include="extensions\Zoom\Zoom.js.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="extensions\Brush\Brush.ts" />
+    <TypeScriptCompile Include="extensions\ColorChooser\ColorChooser.ts" />
+    <TypeScriptCompile Include="extensions\ColorPicker\ColorPicker.ts" />
+    <TypeScriptCompile Include="extensions\Eraser\Eraser.ts" />
+    <TypeScriptCompile Include="extensions\ImageSaver\ImageSaver.ts" />
+    <TypeScriptCompile Include="extensions\PaperCoordinates\PaperCoordinates.ts" />
+    <TypeScriptCompile Include="extensions\Pencil\Pencil.ts" />
+    <TypeScriptCompile Include="extensions\Pen\Pen.ts" />
+    <TypeScriptCompile Include="extensions\Selection\Selection.ts" />
+    <TypeScriptCompile Include="extensions\ShapeDrawer\ShapeDrawer.ts" />
+    <TypeScriptCompile Include="extensions\SizeChooser\SizeChooser.ts" />
+    <TypeScriptCompile Include="extensions\Zoom\Zoom.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paint.js\src\Paint.js.csproj">
+      <Project>{231aaf4b-a44b-445a-a481-479184afa874}</Project>
+      <Name>Paint.js</Name>
+      <Aliases>Paint</Aliases>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

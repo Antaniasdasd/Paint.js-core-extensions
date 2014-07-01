@@ -1,11 +1,11 @@
-var ColorPicker = (function () {
+﻿var ColorPicker = (function () {
     function ColorPicker(paint) {
         this.EXTENSION_NAME = "com.paintjs.ColorPicker";
         this.paint = paint;
     }
     ColorPicker.prototype.init = function () {
         this.paint.registerTool(this);
-        this.paint.barManager.addToolbarToolItem("extensions/ColorPicker/icon.png", "Color Picker", this);
+        this.paint.barManager.addToolbarToolItem(__dirname + "/icon.png", "Color Picker", this);
     };
 
     ColorPicker.prototype.activated = function (id) {
@@ -31,13 +31,13 @@ var ColorPicker = (function () {
             }
         }
 
-        this.paint.primaryColor = Paint.Color.White;
+        this.paint.primaryColor = window.Paint.Color.White;
     };
 
     ColorPicker.prototype.tryFindColor = function (layer, pt) {
         var col = layer.getCanvasMatrix().colorMatrix.getValue(pt.X, pt.Y);
 
-        if (!col.equals(Paint.Color.White))
+        if (!col.equals(window.Paint.Color.White))
             return col;
 
         return null;

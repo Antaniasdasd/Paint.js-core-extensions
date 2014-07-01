@@ -8,7 +8,7 @@ class CursorPosition {
     }
 
     init() {
-        this.indicator = this.paint.barManager.addTextIndicatorItem("extensions/PaperCoordinates/CursorPosition.png", 0, false);
+        this.indicator = this.paint.barManager.addTextIndicatorItem(__dirname + "/CursorPosition.png", 0, false);
     }
 
     onPaperMouseEnter(pt) {
@@ -41,7 +41,7 @@ class PaperSize {
     }
 
     init() {
-        this.indicator = this.paint.barManager.addTextIndicatorItem("extensions/PaperCoordinates/PaperSize.png", 0, false);
+        this.indicator = this.paint.barManager.addTextIndicatorItem(__dirname + "/PaperSize.png", 0, false);
         this.onResize();
     }
 

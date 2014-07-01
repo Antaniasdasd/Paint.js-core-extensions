@@ -82,18 +82,18 @@ class ShapeDrawer {
 
         // Add Rectangle shape
         this._shapes.addShape(
-            this.paint.barManager.addToolbarItem("extensions/ShapeDrawer/icons/rectangle.png", this.ToolBarGroup, Rectangle.name, this),
+            this.paint.barManager.addToolbarItem(__dirname + "/icons/rectangle.png", this.ToolBarGroup, Rectangle.name, this),
             Rectangle
             );
 
         // Add Line shape
         this._shapes.addShape(
-            this.paint.barManager.addToolbarItem("extensions/ShapeDrawer/icons/line.png", this.ToolBarGroup, Line.name, this),
+            this.paint.barManager.addToolbarItem(__dirname + "/icons/line.png", this.ToolBarGroup, Line.name, this),
             Line
             );
 
         this._shapes.addShape(
-            this.paint.barManager.addToolbarItem("extensions/ShapeDrawer/icons/ellipse.png", this.ToolBarGroup, Ellipse.name, this),
+            this.paint.barManager.addToolbarItem(__dirname + "/icons/ellipse.png", this.ToolBarGroup, Ellipse.name, this),
             Ellipse
             );
     }

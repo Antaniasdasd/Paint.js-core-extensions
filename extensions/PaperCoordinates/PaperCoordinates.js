@@ -1,10 +1,10 @@
-var CursorPosition = (function () {
+﻿var CursorPosition = (function () {
     function CursorPosition(paint) {
         this.EXTENSION_NAME = "com.paintjs.CursorPosition";
         this.paint = paint;
     }
     CursorPosition.prototype.init = function () {
-        this.indicator = this.paint.barManager.addTextIndicatorItem("extensions/PaperCoordinates/CursorPosition.png", 0, false);
+        this.indicator = this.paint.barManager.addTextIndicatorItem(__dirname + "/CursorPosition.png", 0, false);
     };
 
     CursorPosition.prototype.onPaperMouseEnter = function (pt) {
@@ -33,7 +33,7 @@ var PaperSize = (function () {
         this.paint = paint;
     }
     PaperSize.prototype.init = function () {
-        this.indicator = this.paint.barManager.addTextIndicatorItem("extensions/PaperCoordinates/PaperSize.png", 0, false);
+        this.indicator = this.paint.barManager.addTextIndicatorItem(__dirname + "/PaperSize.png", 0, false);
         this.onResize();
     };
 
