@@ -38,7 +38,7 @@ class ColorPicker {
     }
 
     private tryFindColor(layer: Paint.PaperLayer, pt: Paint.Point): Paint.Color {
-        var col = layer.getCanvasMatrix().colorMatrix.getValue(pt.X, pt.Y);
+        var col = layer.getCanvasMatrix(new window.Paint.Rectangle(pt, 1, 1)).colorMatrix.getValue(0, 0);
 
         if (!col.equals(window.Paint.Color.White))
             return col;
