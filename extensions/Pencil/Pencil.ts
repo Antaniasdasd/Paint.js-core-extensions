@@ -26,18 +26,29 @@ class Pencil {
     }
 
     onDraw(paper: Paint.Paper, point: Paint.Point) {
-        var matrix = paper.baseLayer.getCanvasMatrix();
+
+        var mX = this._lastPt.X <= point.X ? this._lastPt.X : point.X,
+            mY = this._lastPt.Y <= point.Y ? this._lastPt.Y : point.Y;
+
+        var location = new window.Paint.Point(mX, mY),
+            width = Math.abs(this._lastPt.X - point.X) + 1,
+            height = Math.abs(this._lastPt.Y - point.Y) + 1;
+
+        var rect = new window.Paint.Rectangle(location, width, height);
+
+        var matrix = paper.baseLayer.getCanvasMatrix(rect);
 
         window.Paint.PaperLayer.drawAliasedLine(
-            this._lastPt.X,
-            this._lastPt.Y,
-            point.X,
-            point.Y,
+            this._lastPt.X - mX,
+            this._lastPt.Y - mY,
+            point.X - mX,
+            point.Y - mY,
             this.paint.toolSize,
             this.paint.primaryColor,
             matrix.colorMatrix);
 
         matrix.apply(paper.baseLayer.getContext());
+
 
         this._lastPt = point;
     }

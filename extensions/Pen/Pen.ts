@@ -37,7 +37,7 @@ class Pen
         this.onDraw(paper, point);
     }
     
-    onDraw(paper: Paint.Paper, point: Paint.Point) {        
+    onDraw(paper: Paint.Paper, point: Paint.Point) {     
         var context = this._layer.getContext();
         var canvas = this._layer.canvas;
         
