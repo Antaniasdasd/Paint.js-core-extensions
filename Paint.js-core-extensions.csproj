@@ -25,6 +25,8 @@
     <Content Include="extensions\ColorPicker\icon.png" />
     <Content Include="extensions\Eraser\Eraser.js" />
     <Content Include="extensions\Eraser\icon.png" />
+    <Content Include="extensions\Fill\Fill.js" />
+    <Content Include="extensions\Fill\icon.png" />
     <Content Include="extensions\ImageSaver\ImageSaver.js" />
     <Content Include="extensions\PaperCoordinates\CursorPosition.png" />
     <Content Include="extensions\PaperCoordinates\PaperCoordinates.js" />
@@ -45,7 +47,6 @@
   <ItemGroup>
     <Content Include="LICENSE" />
     <Content Include="README.md" />
-    <Content Include="package.json" />
     <Content Include="extensions\Brush\Brush.js.map" />
     <Content Include="extensions\Brush\package.json" />
     <Content Include="extensions\ColorChooser\ColorChooser.js.map" />
@@ -70,6 +71,8 @@
     <Content Include="extensions\SizeChooser\SizeChooser.js.map" />
     <Content Include="extensions\Zoom\package.json" />
     <Content Include="extensions\Zoom\Zoom.js.map" />
+    <Content Include="extensions\Fill\package.json" />
+    <Content Include="extensions\Fill\Fill.js.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -82,6 +85,7 @@
     <TypeScriptCompile Include="extensions\ColorChooser\ColorChooser.ts" />
     <TypeScriptCompile Include="extensions\ColorPicker\ColorPicker.ts" />
     <TypeScriptCompile Include="extensions\Eraser\Eraser.ts" />
+    <TypeScriptCompile Include="extensions\Fill\Fill.ts" />
     <TypeScriptCompile Include="extensions\ImageSaver\ImageSaver.ts" />
     <TypeScriptCompile Include="extensions\PaperCoordinates\PaperCoordinates.ts" />
     <TypeScriptCompile Include="extensions\Pencil\Pencil.ts" />
