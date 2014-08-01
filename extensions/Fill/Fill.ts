@@ -35,8 +35,7 @@ class Fill {
             var y = stack.pop();
             var x = stack.pop();
 
-            var curColor = colorMatrix.getValue(x, y);
-            if (curColor.equals(replacedColor) && !curColor.equals(newColor)) {
+            if (colorMatrix.isValue(x, y, replacedColor) && !colorMatrix.isValue(x, y, newColor)) {
                 colorMatrix.setValue(x, y, newColor);
 
                 if (x + 1 < colorMatrix.width) stack.push(x + 1, y);
