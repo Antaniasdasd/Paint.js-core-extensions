@@ -1,6 +1,6 @@
 /// <reference path="../../common-headers/paintjs.d.ts" />
 
-class Selection {
+class SelectionExt {
     public EXTENSION_NAME: string = "com.paintjs.Selection";
     paint: Paint.Global;
 
@@ -49,4 +49,4 @@ class Selection {
     }
 }
 
-exports.Extensions = [Selection];
+exports.Extensions = [SelectionExt];
