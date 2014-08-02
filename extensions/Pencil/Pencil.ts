@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class Pencil {
     public EXTENSION_NAME: string = "com.paintjs.Pencil";
     paint: Paint.Global;

@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class Shape {
     static name = "";
     static Draw(ctx: CanvasRenderingContext2D, startPoint: Paint.Point, endPoint: Paint.Point) { }

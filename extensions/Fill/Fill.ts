@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class Fill {
     public EXTENSION_NAME: string = "com.paintjs.Fill";
     paint: Paint.Global;

@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class CursorPosition {
     public EXTENSION_NAME: string = "com.paintjs.CursorPosition";
     paint: Paint.Global;

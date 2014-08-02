@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class SizeChooser
 {
     public EXTENSION_NAME : string = "com.paintjs.SizeChooser";

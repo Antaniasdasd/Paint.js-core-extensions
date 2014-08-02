@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class Pen
 {
     public EXTENSION_NAME : string = "com.paintjs.Pen";

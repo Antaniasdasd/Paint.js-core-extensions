@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class ColorChooser 
 {
     public EXTENSION_NAME : string = "com.paintjs.ColorChooser";
@@ -6,7 +8,7 @@ class ColorChooser
     private inputPrimaryColor : HTMLInputElement;
     private inputSecondaryColor : HTMLInputElement;
 
-    private toolbarGroup: Paint.Group;
+    private toolbarGroup: Paint.BarGroup;
 
     public constructor(paint: Paint.Global) {
         this.paint = paint;

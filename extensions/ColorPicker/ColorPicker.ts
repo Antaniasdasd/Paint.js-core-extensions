@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class ColorPicker {
     public EXTENSION_NAME: string = "com.paintjs.ColorPicker";
     paint: Paint.Global;

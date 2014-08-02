@@ -1,4 +1,4 @@
-/// <reference path="../../libs/node/node.d.ts" />
+/// <reference path="../../common-headers/paintjs.d.ts" />
 
 var fs = require('fs');
 var gui = global.window.nwDispatcher.requireNwGui();

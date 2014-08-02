@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class Eraser {
     public EXTENSION_NAME: string = "com.paintjs.Eraser";
     paint: Paint.Global;

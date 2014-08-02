@@ -1,4 +1,4 @@
-
+/// <reference path="../../common-headers/paintjs.d.ts" />
 
 class Brush {
     public EXTENSION_NAME: string = "com.paintjs.Brush";

@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class Zoom
 {
     public EXTENSION_NAME : string = "com.paintjs.Zoom";

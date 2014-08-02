@@ -1,3 +1,5 @@
+/// <reference path="../../common-headers/paintjs.d.ts" />
+
 class Selection {
     public EXTENSION_NAME: string = "com.paintjs.Selection";
     paint: Paint.Global;
@@ -5,7 +7,7 @@ class Selection {
     private point1: Paint.Point = null;
     private _layer: Paint.PaperLayer;
 
-    private toolbarGroup: Paint.Group;
+    private toolbarGroup: Paint.BarGroup;
 
     public constructor(paint: Paint.Global) {
         this.paint = paint;
