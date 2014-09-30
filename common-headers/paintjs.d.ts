@@ -6276,10 +6276,30 @@ declare module Paint {
     class CanvasMatrix {
         private _img;
         private _matrix;
-        private _rectangle;
-        constructor(img: ImageData, rect: Rectangle);
+        private _location;
+        constructor(img: ImageData, location: Point);
         public colorMatrix : ColorMatrix;
         public apply(context: CanvasRenderingContext2D): void;
+    }
+}
+declare module Paint {
+    class ColorMatrix {
+        private _data;
+        private _width;
+        private _height;
+        constructor(data: Uint8Array, width: number, height: number);
+        public getValue(x: number, y: number): Color;
+        public setValue(x: number, y: number, value: Color): void;
+        public isValue(x: number, y: number, value: Color): boolean;
+        public data : Uint8Array;
+        public width : number;
+        public height : number;
+        /**
+        * Converts from a XY representation to a single-index matrix
+        * representation (going left->right, top->down), considering
+        * an offset of 4 cells for each position.
+        */
+        private translateCoordinates(x, y);
     }
 }
 declare module Paint {
@@ -6352,26 +6372,6 @@ declare module Paint {
         static White : Color;
         private static _Black;
         static Black : Color;
-    }
-}
-declare module Paint {
-    class ColorMatrix {
-        private _data;
-        private _width;
-        private _height;
-        constructor(data: Uint8Array, width: number, height: number);
-        public getValue(x: number, y: number): Color;
-        public setValue(x: number, y: number, value: Color): void;
-        public isValue(x: number, y: number, value: Color): boolean;
-        public data : Uint8Array;
-        public width : number;
-        public height : number;
-        /**
-        * Converts from a XY representation to a single-index matrix
-        * representation (going left->right, top->down), considering
-        * an offset of 4 cells for each position.
-        */
-        private translateCoordinates(x, y);
     }
 }
 declare module Paint {
@@ -6485,6 +6485,30 @@ declare module Paint {
     }
 }
 declare module Paint {
+    class PaperLayer {
+        private _paint;
+        private _context;
+        private _zoom;
+        private _background;
+        public canvas: HTMLCanvasElement;
+        /**
+        * Create a new PaperLayer.
+        * \param background the background color of the layer. If null, it's transparent.
+        */
+        constructor(paint: Global, canvas: HTMLCanvasElement, background: Color);
+        public getContext(): CanvasRenderingContext2D;
+        public getCanvasMatrix(rect?: Rectangle): CanvasMatrix;
+        public copyTo(layer: PaperLayer): void;
+        /**
+        * Draws an aliased line on the given colorMatrix.
+        * FIXME Implement size
+        */
+        static drawAliasedLine(x0: any, y0: any, x1: any, y1: any, size: any, color: Color, matrix: ColorMatrix): void;
+        private fillBackground(color);
+        public restoreImage(savedCanvas: HTMLCanvasElement): void;
+    }
+}
+declare module Paint {
     class Paper {
         private _paint;
         private _zoom;
@@ -6518,29 +6542,5 @@ declare module Paint {
         public setCursor(cursor: string, x?: number, y?: number): void;
         public restoreCursor(): void;
         public getCanvas(): HTMLCanvasElement;
-    }
-}
-declare module Paint {
-    class PaperLayer {
-        private _paint;
-        private _context;
-        private _zoom;
-        private _background;
-        public canvas: HTMLCanvasElement;
-        /**
-        * Create a new PaperLayer.
-        * \param background the background color of the layer. If null, it's transparent.
-        */
-        constructor(paint: Global, canvas: HTMLCanvasElement, background: Color);
-        public getContext(): CanvasRenderingContext2D;
-        public getCanvasMatrix(rect?: Rectangle): CanvasMatrix;
-        public copyTo(layer: PaperLayer): void;
-        /**
-        * Draws an aliased line on the given colorMatrix.
-        * FIXME Implement size
-        */
-        static drawAliasedLine(x0: any, y0: any, x1: any, y1: any, size: any, color: Color, matrix: ColorMatrix): void;
-        private fillBackground(color);
-        public restoreImage(savedCanvas: HTMLCanvasElement): void;
     }
 }
