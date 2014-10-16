@@ -36,13 +36,13 @@ class ColorPicker {
             }
         }
 
-        this.paint.primaryColor = window.Paint.Color.White;
+        this.paint.primaryColor = Paint.Color.White;
     }
 
     private tryFindColor(layer: Paint.PaperLayer, pt: Paint.Point): Paint.Color {
-        var col = layer.getCanvasMatrix(new window.Paint.Rectangle(pt, 1, 1)).colorMatrix.getValue(0, 0);
+        var col = layer.getCanvasMatrix(new Paint.Rectangle(pt, 1, 1)).colorMatrix.getValue(0, 0);
 
-        if (!col.equals(window.Paint.Color.White))
+        if (!col.equals(Paint.Color.White))
             return col;
 
         return null;

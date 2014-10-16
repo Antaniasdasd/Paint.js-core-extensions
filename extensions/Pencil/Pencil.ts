@@ -32,15 +32,15 @@ class Pencil {
         var mX = this._lastPt.X <= point.X ? this._lastPt.X : point.X,
             mY = this._lastPt.Y <= point.Y ? this._lastPt.Y : point.Y;
 
-        var location = new window.Paint.Point(mX, mY),
+        var location = new Paint.Point(mX, mY),
             width = Math.abs(this._lastPt.X - point.X) + 1,
             height = Math.abs(this._lastPt.Y - point.Y) + 1;
 
-        var rect = new window.Paint.Rectangle(location, width, height);
+        var rect = new Paint.Rectangle(location, width, height);
 
         var matrix = paper.baseLayer.getCanvasMatrix(rect);
 
-        window.Paint.PaperLayer.drawAliasedLine(
+        Paint.PaperLayer.drawAliasedLine(
             this._lastPt.X - mX,
             this._lastPt.Y - mY,
             point.X - mX,
